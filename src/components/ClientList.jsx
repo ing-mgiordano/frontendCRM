@@ -14,9 +14,11 @@ const ClientList = () => {
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Cel</th>
+                    <th scope="col">Tax Code</th>
                     <th scope="col"> </th>
                 </tr>
             </thead>
@@ -26,6 +28,8 @@ const ClientList = () => {
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
+                    <td>1234</td>
+                    <td>fnsjin32fi427hfw</td>
                     <td>
                         <button
                             onClick={deleteClient}
