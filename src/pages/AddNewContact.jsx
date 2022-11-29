@@ -1,9 +1,8 @@
 import React from 'react'
 
-const NewContactClient = () => {
+const AddNewContact = () => {
   return (
     <>
-    
         <h2>New Contact</h2>
 
         <form
@@ -19,6 +18,17 @@ const NewContactClient = () => {
                     <option value="call">Call</option>
                     <option value="meeting">Meeting</option>
                 </select>
+            </div>
+
+            <div>
+                <label htmlFor="phone">
+                    CelPhone
+                </label>
+                <input 
+                    type="tel" 
+                    id='phone'
+                   placeholder='Celphone'
+                />
             </div>
 
             <div>
@@ -48,9 +58,8 @@ const NewContactClient = () => {
             />
 
         </form>
-    
     </>
   )
 }
 
-export default NewContactClient
+export default AddNewContact

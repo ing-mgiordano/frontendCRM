@@ -8,6 +8,10 @@ const Header = () => {
   const handleSingOut = () => {
     navigate("/")
   }
+
+  const handleAddContact = () => {
+    navigate("/add-new-contact")
+  }
   
   /* useEffect(() => {
     console.log(location)
@@ -23,11 +27,20 @@ const Header = () => {
             </Link>
             
            {location.pathname !== "/" &&
-            <button
-              onClick={handleSingOut}
-            >
-              Sing Out
-            </button>}
+            <div>
+              {location.pathname !== "/add-new-contact" &&
+              <button
+                onClick={handleAddContact}
+              >
+                Add New Contact
+              </button>}
+              
+              <button
+                onClick={handleSingOut}
+              >
+                Sing Out
+              </button>
+            </div>}
         </div>
     </header>
   )

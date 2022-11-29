@@ -44,12 +44,6 @@ const OpportunitiesList = () => {
                 </tr>
             </tbody>
         </table>
-
-        <button
-            onClick={handleAddOpportunitie}
-        >
-            Add Opportunitie
-        </button>
     </div>
   )
 }

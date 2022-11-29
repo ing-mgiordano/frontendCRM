@@ -32,12 +32,6 @@ const ClientInfo = () => {
                 </tr>
             </tbody>
         </table>
-
-        <button
-          onClick={handleAddContact}
-        >
-          Add Contact
-        </button>
       </div>
 
     </>
