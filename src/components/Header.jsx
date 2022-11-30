@@ -23,7 +23,7 @@ const Header = () => {
             <Link
               to='/home'
             >
-              <h2>CRM</h2>
+              <h2>CRM App</h2>
             </Link>
             
            {location.pathname !== "/" &&

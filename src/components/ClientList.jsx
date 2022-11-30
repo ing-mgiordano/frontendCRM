@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import useCrm from "../hooks/useCrm"
 
 const ClientList = () => {
+
+    const { client } = useCrm()
 
     const deleteClient = () => {
         console.log("eliminar")
@@ -8,7 +11,7 @@ const ClientList = () => {
     }
 
   return (
-    <div>
+    <div className='list'>
         <h2>Clients</h2>
         <table>
             <thead>
@@ -23,19 +26,27 @@ const ClientList = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row"><Link to='/client-info'>1</Link></th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>1234</td>
-                    <td>fnsjin32fi427hfw</td>
-                    <td>
-                        <button
-                            onClick={deleteClient}
-                        >X</button>
-                    </td>
-                </tr>
+                {client?.map((cl) => (
+                        <tr
+                            key={cl.id}
+                        >
+                            <td><Link to='/client-info'>{cl.id}</Link></td>
+                            <td>{cl.name}</td>
+                            <td>{cl.surname}</td>
+                            <td>{cl.email}</td>
+                            <td>{cl.num}</td>
+                            <td>{cl.taxCode}</td>
+                            <td>
+                                <button
+                                    onClick={deleteClient}
+                                >Delete</button>
+                                <button
+                                    /* onClick={modifyClient} */
+                                >Modify</button>
+                            </td>
+                        </tr>
+                    ))  
+                }
             </tbody>
         </table>
     </div>

@@ -1,9 +1,10 @@
 import ClientList from "../components/ClientList"
 import OpportunitiesList from "../components/OpportunitiesList"
 
+
 const Home = () => {
   return (
-    <div>
+    <div className="home">
         <OpportunitiesList />
         <ClientList />
     </div>

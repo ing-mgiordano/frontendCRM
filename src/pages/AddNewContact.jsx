@@ -1,15 +1,33 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom"
 
 const AddNewContact = () => {
+
+    const navigate = useNavigate()
+
+    const handleAddContact = () => {
+
+        navigate('/home')
+    }
+
   return (
     <>
         <h2>New Contact</h2>
 
         <form
-            /* onSubmit= */
-        >
+            onSubmit={handleAddContact}
+        >   
             <div>
-                <label htmlFor="tipo">
+                <label htmlFor="id">
+                    ID
+                </label>
+                <input 
+                    type="text" 
+                    id='id'
+                   placeholder='ID'
+                />
+            </div>
+            <div>
+                <label htmlFor="way">
                     Way to contact
                 </label>
                 <select name="ways" id="way">
@@ -22,12 +40,12 @@ const AddNewContact = () => {
 
             <div>
                 <label htmlFor="phone">
-                    CelPhone
+                    CellPhone
                 </label>
                 <input 
                     type="tel" 
                     id='phone'
-                   placeholder='Celphone'
+                   placeholder='Cellphone'
                 />
             </div>
 

@@ -8,6 +8,7 @@ import ClientInfo from './pages/ClientInfo';
 import AddNewContact from './pages/AddNewContact';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Header />
