@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import clientAxios from "../config/clientAxios";
 
-
 const CrmContext = createContext();
 
 const CrmProvider = ({ children }) => {
@@ -10,6 +9,14 @@ const CrmProvider = ({ children }) => {
   const [client, setClient] = useState()
   const [deleteC, setDeleteC] = useState()
   const [addC, setAddC] = useState()
+  const [clientBody, setClientBody] = useState({
+    id: null,
+    wayContac: '',
+    num: '',
+    date: '',
+    summary: ''
+  })
+  
 
   useEffect(() => {
     const getOpportunities = async() => {
@@ -43,13 +50,15 @@ const CrmProvider = ({ children }) => {
     }
   }
 
-  /* const addContac = async(id) => {
+  const addContac = async(id) => {
     try {
-      const { data } 
+      const { data } = await clientAxios.post(`/add-new-contac/${id}`, clientBody)
+      setClientBody(data)
+      console.log(clientBody);
     } catch (error) {
       console.log(error);
     }
-  } */
+  }
 
   const deleteOpportunity = async(id) => {
     try {

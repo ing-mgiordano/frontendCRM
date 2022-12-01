@@ -1,10 +1,14 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+
 
 const AddNewContact = () => {
+    
+    const params = useParams()
+    const {id} = params;
 
     const navigate = useNavigate()
 
-    const handleAddContact = () => {
+    const addContact = () => {
 
         navigate('/home')
     }
@@ -14,16 +18,19 @@ const AddNewContact = () => {
         <h2>New Contact</h2>
 
         <form
-            onSubmit={handleAddContact}
+            onSubmit={addContact}
         >   
             <div>
-                <label htmlFor="id">
+                <label 
+                    htmlFor="id"
+                >
                     ID
                 </label>
                 <input 
                     type="text" 
                     id='id'
-                   placeholder='ID'
+                    placeholder='ID'
+                    value={id}
                 />
             </div>
             <div>

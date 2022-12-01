@@ -1,9 +1,12 @@
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate, } from "react-router-dom"
 import useCrm from "../hooks/useCrm"
 
 const OpportunitieInfo = () => {
 
-  const { opportunities } = useCrm() 
+  const location = useLocation()
+
+  
+  const { opportunities } = useCrm()
 
   const navigate = useNavigate()
 

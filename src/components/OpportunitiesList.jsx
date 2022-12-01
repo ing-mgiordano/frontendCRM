@@ -1,8 +1,10 @@
 import { useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import useCrm from "../hooks/useCrm"
 
+
 const OpportunitiesList = () => {
+
 
     const { opportunities, deleteOpportunity, addClient } = useCrm()
 

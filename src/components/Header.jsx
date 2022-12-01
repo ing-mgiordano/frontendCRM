@@ -4,13 +4,22 @@ const Header = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
+
+  const idOpp = location.pathname.split("/opportunitie-info/")[1]
+  const idCli = location.pathname.split("/client-info/")[1]
   
   const handleSingOut = () => {
     navigate("/")
   }
 
   const handleAddContact = () => {
-    navigate("/add-new-contact")
+    if(location.pathname === `/opportunitie-info/${idOpp}`){
+      navigate(`/add-new-contact/${idOpp}`)
+    }
+    if(location.pathname === `/client-info/${idCli}`){
+      navigate(`/add-new-contact/${idCli}`)
+    }
+
   }
   
   /* useEffect(() => {

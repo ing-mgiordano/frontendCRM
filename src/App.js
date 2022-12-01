@@ -18,7 +18,7 @@ function App() {
           <Route index element={ <Login /> }/>
           <Route path='home' element={ <Home /> }/>
           <Route path='opportunitie-info/:id' element={ <OpportunitieInfo /> }/>
-          <Route path='add-new-contact' element={<AddNewContact />} />
+          <Route path='add-new-contact/:id' element={<AddNewContact />} />
           <Route path='client-info/:id' element={ <ClientInfo /> }/>
         </Routes>
       </CrmProvider>

@@ -1,5 +1,14 @@
+## FRONTEND ##
 
+The react application is created using npx create-react-app
+The project is formatted, creating pages, components, context and hook.
+Axios is used to connect the backend to the frontend, the clientAxios.jsx component is created.
 
+The Home page is created, where the opportunities and clients are shown, with their respective functions of deleting and converting an opportunity into a client.
+
+OpportunityInfo.jsx and ClientInfo.jsx show the contacts made in each case.
+
+Finally, in AddNewContact.jsx there is a form to add a contact.
 
 # Getting Started with Create React App
 
