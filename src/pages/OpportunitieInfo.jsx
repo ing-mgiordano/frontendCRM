@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom"
+import useCrm from "../hooks/useCrm"
 
 const OpportunitieInfo = () => {
+
+  const { opportunities } = useCrm() 
 
   const navigate = useNavigate()
 
@@ -24,15 +27,24 @@ const OpportunitieInfo = () => {
                     <th scope="col">Summary</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Email</td>
-                    <td>64646464</td>
-                    <td>11/11/22</td>
-                    <td>gfdgfdgdf</td>
-                </tr>
+            {opportunities?.map(op => {
+                  return (
+            <tbody
+              key={op.id}
+            >
+                      {op.contacts?.map(contac =>(
+                        <tr
+                          key={contac.id}
+                        >
+                            <td>{contac.id}</td>
+                            <td>{contac.wayContac}</td>
+                            <td>{contac.num}</td>
+                            <td>{contac.date}</td>
+                            <td>{contac.summary}</td>
+                        </tr>
+                      ))}
             </tbody>
+                  )})}
         </table>
       </div>
 

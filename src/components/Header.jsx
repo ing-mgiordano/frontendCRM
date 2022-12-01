@@ -28,7 +28,7 @@ const Header = () => {
             
            {location.pathname !== "/" &&
             <div>
-              {location.pathname !== "/add-new-contact" &&
+              {location.pathname !== "/add-new-contact" && location.pathname !== "/home" &&
               <button
                 onClick={handleAddContact}
               >

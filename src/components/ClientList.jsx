@@ -3,12 +3,7 @@ import useCrm from "../hooks/useCrm"
 
 const ClientList = () => {
 
-    const { client } = useCrm()
-
-    const deleteClient = () => {
-        console.log("eliminar")
-        //setiar cliente en false
-    }
+    const { client, deleteClient } = useCrm()
 
   return (
     <div className='list'>
@@ -30,7 +25,7 @@ const ClientList = () => {
                         <tr
                             key={cl.id}
                         >
-                            <td><Link to='/client-info'>{cl.id}</Link></td>
+                            <td><Link to={`/client-info/${cl.id}`}>{cl.id}</Link></td>
                             <td>{cl.name}</td>
                             <td>{cl.surname}</td>
                             <td>{cl.email}</td>
@@ -38,11 +33,8 @@ const ClientList = () => {
                             <td>{cl.taxCode}</td>
                             <td>
                                 <button
-                                    onClick={deleteClient}
+                                    onClick={() => deleteClient(cl.id)}
                                 >Delete</button>
-                                <button
-                                    /* onClick={modifyClient} */
-                                >Modify</button>
                             </td>
                         </tr>
                     ))  

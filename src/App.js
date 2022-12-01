@@ -7,6 +7,7 @@ import OpportunitieInfo from './pages/OpportunitieInfo';
 import ClientInfo from './pages/ClientInfo';
 import AddNewContact from './pages/AddNewContact';
 
+
 function App() {
 
   return (
@@ -16,9 +17,9 @@ function App() {
         <Routes>
           <Route index element={ <Login /> }/>
           <Route path='home' element={ <Home /> }/>
-          <Route path='opportunitie-info' element={ <OpportunitieInfo /> }/>
+          <Route path='opportunitie-info/:id' element={ <OpportunitieInfo /> }/>
           <Route path='add-new-contact' element={<AddNewContact />} />
-          <Route path='client-info' element={ <ClientInfo /> }/>
+          <Route path='client-info/:id' element={ <ClientInfo /> }/>
         </Routes>
       </CrmProvider>
     </BrowserRouter>

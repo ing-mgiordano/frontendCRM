@@ -4,24 +4,7 @@ import useCrm from "../hooks/useCrm"
 
 const OpportunitiesList = () => {
 
-    const { opportunities } = useCrm()
-
-    const navigate = useNavigate()
-
-    const handleAddOpportunitie = () => {
-        navigate('/add-opportunitie')
-        
-    }
-
-    const addClient = () => {
-        //setiar cliente en true y agregar clave fiscal
-        console.log("nuevo cliente");
-        const taxCode = prompt("Enter customer tax code")
-    }
-
-    useEffect(()=>{
-        console.log(opportunities)
-    }, [])
+    const { opportunities, deleteOpportunity, addClient } = useCrm()
 
   return (
     <div className="list">
@@ -42,21 +25,18 @@ const OpportunitiesList = () => {
                         <tr
                             key={op.id}
                         >
-                            <td><Link to='/opportunitie-info'>{op.id}</Link></td>
+                            <td><Link to={`/opportunitie-info/${op.id}`}>{op.id}</Link></td>
                             <td>{op.name}</td>
                             <td>{op.surname}</td>
                             <td>{op.email}</td>
                             <td>{op.num}</td>
                             <td>
                                 <button
-                                    onClick={addClient}
-                                >Add To Client</button>
+                                    onClick={() => addClient(op.id)}
+                                >Add As Client</button>
                                 <button
-                                    /* onClick={deleteClient} */
+                                    onClick={() => deleteOpportunity(op.id)}
                                 >Delete</button>
-                                <button
-                                    /* onClick={modifyClient} */
-                                >Modify</button>
                             </td>
                         </tr>
                     ))  

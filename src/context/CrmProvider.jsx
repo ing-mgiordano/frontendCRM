@@ -8,6 +8,8 @@ const CrmProvider = ({ children }) => {
 
   const [opportunities, setOpportunities] = useState()
   const [client, setClient] = useState()
+  const [deleteC, setDeleteC] = useState()
+  const [addC, setAddC] = useState()
 
   useEffect(() => {
     const getOpportunities = async() => {
@@ -30,13 +32,52 @@ const CrmProvider = ({ children }) => {
 
     getOpportunities()
     getClients()
-  }, [])
+  }, [deleteC, addC])
+
+  const addClient = async(id) => {
+    try {
+      const { data } = await clientAxios.post(`/opportunities/${id}`)
+      setAddC(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  /* const addContac = async(id) => {
+    try {
+      const { data } 
+    } catch (error) {
+      console.log(error);
+    }
+  } */
+
+  const deleteOpportunity = async(id) => {
+    try {
+      const { data } = await clientAxios.post(`/delete-opportunitie/${id}`)
+      setOpportunities(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const deleteClient = async(id) => {
+    try {
+      const { data } = await clientAxios.post(`/clients/${id}`)
+      setDeleteC(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
   return (
     <CrmContext.Provider
         value={{
           opportunities,
-          client
+          client,
+          deleteOpportunity,
+          deleteClient,
+          addClient
       }}
     >
         { children }
