@@ -100,7 +100,7 @@ const AddNewContact = () => {
                         </label>
                         <input 
                             className="input"
-                            type="datetime-local" 
+                            type="date" 
                             id='date'
                             placeholder='Date'
                             value={date}
