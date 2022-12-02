@@ -37,16 +37,60 @@ button {
   margin-left: 5px;
   border: solid 2px black;
   padding: 5px;
+  border-radius: 20px;
 }
 
 .login {
   display: block;
   align-items: center;
   margin-top: 20px;
-  
+
+}
+
+.wraper {
+  display: grid;
+  place-items: center;
 }
 
 th, td, tr {
   padding: 5px ;
 }
+
+.button {
+  border-radius: 1rem;
+  background-color: rgb(155, 155, 250);
+  font-weight: bold;
+  box-shadow: 2px 4px #888888;
+}
+
+
+.button:hover {
+  transform: translateY(-0.2rem);
+  background-color: rgb(123, 123, 249);
+}
+
+.button-delete {
+  border-radius: 1rem;
+  background-color: rgb(199, 71, 86);
+  font-weight: bold;
+  box-shadow: 2px 4px #888888;
+}
+
+.button-delete:hover {
+  transform: translateY(-0.2rem);
+  background-color: rgb(178, 63, 77);
+}
+
+.button-login-container {
+  margin-left: 55px;
+  margin-top: 10px;
+}
+
+.input {
+  border-radius: 2rem;
+  margin: 10px;
+  padding: 5px;
+}
+
+
 

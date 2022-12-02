@@ -25,7 +25,7 @@ const ClientList = () => {
                         <tr
                             key={cl.id}
                         >
-                            <td><Link to={`/client-info/${cl.id}`}>{cl.id}</Link></td>
+                            <td><Link to={`/client-info/${cl.id}`}><button className='button'>{cl.id}</button></Link></td>
                             <td>{cl.name}</td>
                             <td>{cl.surname}</td>
                             <td>{cl.email}</td>
@@ -33,8 +33,9 @@ const ClientList = () => {
                             <td>{cl.taxCode}</td>
                             <td>
                                 <button
+                                className='button-delete'
                                     onClick={() => deleteClient(cl.id)}
-                                >Delete</button>
+                                >Delete as Client</button>
                             </td>
                         </tr>
                     ))  

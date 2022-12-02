@@ -18,14 +18,16 @@ const Formlogin = () => {
   return (
     <>
         <form
-        className="login"
+            className="login"
             onSubmit={loginSubmit}
         >
+        <div className="wraper">
             <div>
                 <label htmlFor="email">
                     User Name
                 </label>
-                <input 
+                <input
+                    className="input"
                     type="email" 
                     id='email'
                     placeholder='Email'
@@ -38,7 +40,8 @@ const Formlogin = () => {
                 <label htmlFor="password">
                     Password
                 </label>
-                <input 
+                <input
+                    className="input"
                     type="password" 
                     id='password'
                     placeholder='Password'
@@ -46,11 +49,17 @@ const Formlogin = () => {
                     onChange={ e => setPassword(e.target.value)}
                 />
             </div>
+            <div
+                className="button-login-container"
+            >
+                <input
+                    className="button"
+                    type="submit"
+                    value="Login"
+                />
+            </div>
+        </div>
 
-            <input
-                type="submit"
-                value="Login"
-            />
 
         </form>
     </>

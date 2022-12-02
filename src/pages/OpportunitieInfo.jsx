@@ -51,7 +51,9 @@ const OpportunitieInfo = () => {
         </table>
       </div>
 
-      <button>Calendar</button>
+      <button
+        className="button"
+      >Calendar</button>
     </>
   )
 }

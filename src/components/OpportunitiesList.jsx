@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import useCrm from "../hooks/useCrm"
 
 
+
 const OpportunitiesList = () => {
 
 
@@ -27,16 +28,18 @@ const OpportunitiesList = () => {
                         <tr
                             key={op.id}
                         >
-                            <td><Link to={`/opportunitie-info/${op.id}`}>{op.id}</Link></td>
+                            <td><Link to={`/opportunitie-info/${op.id}`}><button className='button'>{op.id}</button></Link></td>
                             <td>{op.name}</td>
                             <td>{op.surname}</td>
                             <td>{op.email}</td>
                             <td>{op.num}</td>
                             <td>
                                 <button
+                                    className="button"
                                     onClick={() => addClient(op.id)}
                                 >Add As Client</button>
                                 <button
+                                    className="button-delete"
                                     onClick={() => deleteOpportunity(op.id)}
                                 >Delete</button>
                             </td>

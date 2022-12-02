@@ -32,19 +32,21 @@ const Header = () => {
             <Link
               to='/home'
             >
-              <h2>CRM App</h2>
+              <h2>CRM Solera App</h2>
             </Link>
             
            {location.pathname !== "/" &&
             <div>
               {location.pathname !== "/add-new-contact" && location.pathname !== "/home" &&
               <button
+                className="button"
                 onClick={handleAddContact}
               >
                 Add New Contact
               </button>}
               
               <button
+              className="button-delete"
                 onClick={handleSingOut}
               >
                 Sing Out
