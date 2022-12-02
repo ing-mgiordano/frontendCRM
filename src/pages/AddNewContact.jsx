@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
-import useCrm from "../hooks/useCrm";
+import clientAxios from "../config/clientAxios";
 
 const AddNewContact = () => {
 
-    const { addContac, clientBody, setClientBody } = useCrm()
-    
     const params = useParams()
     const navigate = useNavigate()
     
@@ -17,18 +15,25 @@ const AddNewContact = () => {
     const [date, setDate] = useState('')
     const [summary, setSummary] = useState('')
     
-    const handleAddContact = () => {
-        setClientBody({
-            wayContac: wayContact,
-            num: phone,
-            date: date,
-            summary: summary
-          })
-        /* addContac(id, clientBody) */
-        console.log(id);
-        console.log(clientBody);
+    const contactBody = {
+        wayContac: wayContact,
+        num: phone,
+        date: date,
+        summary: summary
     }
 
+    const handleAddContact = async(e) => {
+        e.preventDefault()
+
+        try {
+            const {data} = await clientAxios.post(`/add-new-contac/${id}`, contactBody)
+            console.log(data)
+        } catch (error) {
+            console.log(error);
+        }
+        alert("Contact add")
+        navigate("/home")
+    }
 
   return (
     <>

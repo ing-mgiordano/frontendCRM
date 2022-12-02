@@ -1,15 +1,8 @@
-import { useNavigate } from "react-router-dom"
 import useCrm from "../hooks/useCrm"
 
 const ClientInfo = () => {
 
   const { client } = useCrm() 
-
-  const navigate = useNavigate()
-
-  const handleAddContact = () => {
-    navigate('/client-info/new-contact')
-  }
 
   return (
     <>
@@ -48,7 +41,9 @@ const ClientInfo = () => {
         </table>
       </div>
 
-      <button>Calendar</button>
+      <button
+        className="button"
+      >Calendar</button>
     </>
   )
 }

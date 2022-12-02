@@ -9,14 +9,8 @@ const CrmProvider = ({ children }) => {
   const [client, setClient] = useState()
   const [deleteC, setDeleteC] = useState()
   const [addC, setAddC] = useState()
-  const [clientBody, setClientBody] = useState({
-    wayContac: '',
-    num: '',
-    date: '',
-    summary: ''
-  })
-  
 
+  
   useEffect(() => {
     const getOpportunities = async() => {
       try {
@@ -38,7 +32,7 @@ const CrmProvider = ({ children }) => {
 
     getOpportunities()
     getClients()
-  }, [deleteC, addC])
+  }, [deleteC, addC, opportunities, client])
 
   const addClient = async(id) => {
     try {
@@ -46,15 +40,6 @@ const CrmProvider = ({ children }) => {
       setAddC(data)
     } catch (error) {
       console.log(error)
-    }
-  }
-
-  const addContac = async(id, clientBody) => {
-    try {
-      console.log(`/add-new-contac/${id}`, clientBody)
-      await clientAxios.post(`/add-new-contac/${id}`, clientBody)
-    } catch (error) {
-      console.log(error);
     }
   }
 
@@ -85,9 +70,6 @@ const CrmProvider = ({ children }) => {
           deleteOpportunity,
           deleteClient,
           addClient,
-          addContac,
-          clientBody, 
-          setClientBody
       }}
     >
         { children }
